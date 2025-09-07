@@ -30,6 +30,23 @@
         body,
         html {
             background-color: #f2f2f2;
+            transition: opacity 0.5s ease;
+            opacity: 1;
+            overflow-x: hidden;
+        }
+
+        body.slide-out {
+            animation: slideLeft 0.5s forwards;
+        }
+
+        @keyframes slideLeft {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
         }
 
         .rounded {
@@ -87,7 +104,8 @@
                 <div style="font-weight: 600; color: #646464; font-size: 0.6rem;">Organize suas compras</div>
             </div>
 
-            <div class="box rounded col ms-1 bg-white glass p-3" style="height: 9rem;" onclick="abrirTela('pages/perguntaIA.html')">
+            <div class="box rounded col ms-1 bg-white glass p-3" style="height: 9rem;"
+                onclick="abrirTela('pages/perguntaIA.html')">
                 <div class="my-3"><i data-feather="cpu" style="height: 2rem; width: 2rem;"></i></div>
                 <div style="font-weight: 600;">Pergunte a IA</div>
                 <div style="font-weight: 600; color: #646464; font-size: 0.6rem;">Tire dúvidas sobre produtos</div>
@@ -131,9 +149,13 @@
 
 <script src="js/main.js"></script>
 <script>
-    function abrirTela(tela){
-        window.location.href = tela;
+    function abrirTela(url) {
+        document.body.classList.add('slide-out'); 
+        setTimeout(() => {
+            window.location.href = url;
+        }, 350); 
     }
+
 </script>
 
 </html>

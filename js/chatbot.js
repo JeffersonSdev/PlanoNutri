@@ -32,7 +32,7 @@ $(document).ready(function () {
                 </div>
             </div>`;
         $("#messages").append(thinkingMessageHtml);
-        
+
         $("#chat-window").scrollTop($("#chat-window")[0].scrollHeight);
 
         // 3. Procura pela resposta pronta
@@ -54,18 +54,21 @@ $(document).ready(function () {
             // resposta = await perguntarGroq(userInput); // <- Descomente para usar a IA
             $("#messages").append(`<div class="d-flex justify-content-start mb-3"><div class="bot-message">Ainda não temos resposta para essa pergunta, estamos trabalhando para melhorar sua experiência!</div></div>`);
         }
-        
+
         // 7. Rola o chat para a resposta final
         $("#chat-window").scrollTop($("#chat-window")[0].scrollHeight);
     });
 
     // Adiciona o evento de pressionar "Enter"
-    $('#user-input').on('keypress', function(e) {
+    $('#user-input').on('keypress', function (e) {
         if (e.which === 13) {
             e.preventDefault();
             $("#send-btn").click(); // Dispara o evento de clique do botão
         }
     });
+
+    // carregamento suave
+    document.body.classList.add('fade-in');
 });
 
 // Lista de perguntas e respostas para a busca inteligente
