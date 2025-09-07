@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlanoNutri</title>
+
+    <style>
+        @media (min-width: 768px) {
+            main {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body,
+        html {
+            background-color: #f2f2f2;
+        }
+
+        .rounded {
+            border-radius: 20px !important;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.15);
+            /* fundo semi-transparente */
+            backdrop-filter: blur(10px);
+            /* desfoque do que está atrás */
+            -webkit-backdrop-filter: blur(10px);
+            /* compatibilidade com Safari */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            /* borda levemente visível */
+            box-shadow: 0 0px 5px rgba(105, 105, 105, 0.1);
+            /* sombra suave */
+        }
+
+        .box {
+            transition: transform .1s;
+        }
+
+        .box:active {
+            transform: scale(1.03);
+        }
+
+        .form-control:focus {
+            border-color: rgb(202, 202, 202) !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="d-flex align-items-center justify-content-between my-5 mx-4"
+            style="font-weight: 600; font-size: 1.8rem;letter-spacing: 2px;">
+            <div><span style="color:#646464">Plano</span><span>Nutri</span></div>
+            <i data-feather="moon"></i>
+        </div>
+        <div class="mx-4" style="font-weight: 600; font-size: 1.3rem;letter-spacing: 1px;">
+            <span style="color: #646464;line-height: 2;">Olá consumidor inteligente,</span><br>Como podemos ajudar você
+            hoje?
+        </div>
+    </header>
+
+
+    <main class="mt-5">
+        <div class="d-flex justify-content-center align-items-center mx-4 mt-2">
+            <div class="box rounded col me-1 bg-white glass p-3" style="height: 9rem;">
+                <div class="my-3"><i data-feather="shopping-cart" style="height: 2rem; width: 2rem;"></i></div>
+                <div style="font-weight: 600;">Criar Nova Lista</div>
+                <div style="font-weight: 600; color: #646464; font-size: 0.6rem;">Organize suas compras</div>
+            </div>
+
+            <div class="box rounded col ms-1 bg-white glass p-3" style="height: 9rem;" onclick="abrirTela('pages/perguntaIA.html')">
+                <div class="my-3"><i data-feather="cpu" style="height: 2rem; width: 2rem;"></i></div>
+                <div style="font-weight: 600;">Pergunte a IA</div>
+                <div style="font-weight: 600; color: #646464; font-size: 0.6rem;">Tire dúvidas sobre produtos</div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center mx-4 mt-2">
+            <div class="box rounded col me-1 bg-white glass p-3" style="height: 9rem;">
+                <div class="my-3"><i data-feather="settings" style="height: 2rem; width: 2rem;"></i></div>
+                <div style="font-weight: 600;">Configurações</div>
+                <div style="font-weight: 600; color: #646464; font-size: 0.6rem;">Defina temas, limites, alertas</div>
+            </div>
+
+            <div class="box rounded col ms-1 bg-white glass p-3" style="height: 9rem;">
+                <div class="my-3"><i data-feather="file-text" style="height: 2rem; width: 2rem;"></i></div>
+                <div style="font-weight: 600;">Histórico</div>
+                <div style="font-weight: 600; color: #646464; font-size: 0.6rem;">Consulte compras anteriores</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="mx-4 mt-2" style="position: relative;">
+            <i data-feather="navigation"
+                style="height: 1.1rem; width: 1.1rem; position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: #999;"></i>
+            <input type="search" class="form-control rounded" style=" height: 2.7rem; padding-left: 35px;"
+                placeholder="Pesquisar">
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <div class="bg-dark p-2 rounded-circle m-4 box" style="width: fit-content;">
+                <i data-feather="plus" style="height: 2rem; width: 2rem;" class="text-white"></i>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+
+
+
+<script src="js/main.js"></script>
+<script>
+    function abrirTela(tela){
+        window.location.href = tela;
+    }
+</script>
+
+</html>
